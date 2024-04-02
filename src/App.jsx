@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import logo from './logo.svg'
 import './App.css';
+import EightBall from '../Eightball';
 
 
 /** Component for entire page.
@@ -11,29 +11,33 @@ import './App.css';
 */
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  function incrCount() {
-    setCount(count => count + 1);
-  }
-
   return (
-    <div className="App">
-      <main>
-        <img src={logo} className="App-logo" alt="Rithm" />
-        <h1>Rithm React Starter</h1>
-        <p>
-          <button
-              className="btn btn-primary"
-              onClick={incrCount}>
-            Clicked: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>src/App.jsx</code>
-        </p>
-      </main>
-    </div>
+      <div className='App-div'>
+        <EightBall answers={
+          [
+            { msg: "It is certain.", color: "green" },
+            { msg: "It is decidedly so.", color: "green" },
+            { msg: "Without a doubt.", color: "green" },
+            { msg: "Yes - definitely.", color: "green" },
+            { msg: "You may rely on it.", color: "green" },
+            { msg: "As I see it, yes.", color: "green" },
+            { msg: "Most likely.", color: "green" },
+            { msg: "Outlook good.", color: "green" },
+            { msg: "Yes.", color: "green" },
+            { msg: "Signs point to yes.", color: "goldenrod" },
+            { msg: "Reply hazy, try again.", color: "goldenrod" },
+            { msg: "Ask again later.", color: "goldenrod" },
+            { msg: "Better not tell you now.", color: "goldenrod" },
+            { msg: "Cannot predict now.", color: "goldenrod" },
+            { msg: "Concentrate and ask again.", color: "goldenrod" },
+            { msg: "Don't count on it.", color: "red" },
+            { msg: "My reply is no.", color: "red" },
+            { msg: "My sources say no.", color: "red" },
+            { msg: "Outlook not so good.", color: "red" },
+            { msg: "Very doubtful.", color: "red" },
+          ]
+        } />
+      </div>
   );
 };
 
